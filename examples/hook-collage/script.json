@@ -1,0 +1,9 @@
+{
+  "direction": "[energetic, conversational, fast-paced Indonesian content creator explaining news to a friend]",
+  "lines": [
+    {"id": "h1", "tag": "[shocked]", "text": "Asap karhutla sampai Jakarta."},
+    {"id": "h2", "tag": "[curious, slightly dramatic]", "text": "Eks Mendag Lutfi bilang, perusahaan Singapura ikut jadi pelaku. Kok bisa?", "say": "Eks mendag Lutfi bilang, perusahaan Singapura ikut jadi pelaku. Kok bisa?"},
+    {"id": "rd", "tagline": true, "text": "Rangkumin dong!"}
+  ],
+  "tail": 0.6
+}

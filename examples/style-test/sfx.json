@@ -1,0 +1,9 @@
+[
+  {"at": "hook", "offset": 0.0, "type": "whoosh"},
+  {"at": "rd", "offset": 0.0, "type": "thump"},
+  {"at": "parts", "offset": 0.0, "type": "whoosh"},
+  {"at": "price", "offset": 0.0, "type": "whoosh"},
+  {"at": "route", "offset": 0.0, "type": "whoosh"},
+  {"at": "cta", "offset": 0.0, "type": "pop"},
+  {"at": "end", "offset": 0.0, "type": "ding"}
+]

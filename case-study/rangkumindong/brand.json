@@ -1,0 +1,418 @@
+{
+ "name": "Rangkumin Dong",
+ "handles": {
+  "instagram": "@rangkumindong",
+  "tiktok": "@rangkumindong",
+  "youtube": "@RangkuminDong-d2m"
+ },
+ "tagline": "Berita ribet? Rangkumin dong.",
+ "language": "id",
+ "style": "sticker",
+ "colors": {
+  "accent": "#FF5A36",
+  "highlight": "#FFD23F",
+  "paper": "#F3EFE6",
+  "ink": "#1B2430",
+  "slate": "#3E5568"
+ },
+ "length_seconds": [
+  60,
+  90
+ ],
+ "topic_rotation": {
+  "mon": "pasar, ekonomi & bisnis",
+  "tue": "teknologi",
+  "wed": "viral (berita umum yang lagi ramai)",
+  "thu": "politik (netral, bersumber)",
+  "fri": "wildcard (skor tertinggi, topik apa saja)",
+  "sat": "video mingguan \"Rangkumin Seminggu\" 08:00 + Short potongan bab terkuat",
+  "sun": "\"Minggu Depan\": apa yang perlu ditunggu minggu ini (jadwal BI, rilis data, sidang, tenggat)"
+ },
+ "voices": {
+  "male": {
+   "name": "Pratama",
+   "voice_id": "q8qwd1jY2jS3AWOBeq25",
+   "model": "eleven_v3",
+   "tagline": "assets/voice/tagline-pratama.mp3",
+   "settings": {
+    "stability": 0.0,
+    "similarity_boost": 0.8
+   }
+  },
+  "female": {
+   "name": "Cahaya",
+   "voice_id": "iWydkXKoiVtvdn4vLKp9",
+   "model": "eleven_v3",
+   "tagline": "assets/voice/tagline-cahaya.mp3",
+   "note": "soft R; consider alternative if needed"
+  }
+ },
+ "script_style": {
+  "tone": "conversational, explaining to a friend; short sentences; hooks like 'Jadi gini.', 'Pemicunya? X.', 'Nah,'; dramatic beats for key numbers",
+  "delivery": "per-line ElevenLabs v3 tags (shocked/serious/skeptical/reassuring/playful)",
+  "max_pause_s": 0.24,
+  "target_wpm": [
+   150,
+   170
+  ],
+  "approved": "2026-10-19 (v3 punchy)"
+ },
+ "upload_post_user": "Rangkumindong",
+ "posting": {
+  "platforms": [
+   "instagram",
+   "youtube"
+  ],
+  "tiktok": "warming up manually until 2026-10-24, then connect to Upload-Post and add 'tiktok'"
+ },
+ "experiments": {
+  "variables": {
+   "hook (A/B same day)": [
+    "question_reveal",
+    "shock_number",
+    "kamu_stakes",
+    "myth",
+    "person_collage",
+    "story"
+   ],
+   "format": [
+    "standard",
+    "short"
+   ],
+   "voice": "frozen: weekly blocks (not tested until hooks are decided)",
+   "slot": "frozen at 19:00 WITA",
+   "subs": "alternates daily: word (1-2 words, big, centred) vs block (current 3-line highlight); same for A and B that day"
+  },
+  "schedule": [
+   {
+    "date": "2026-10-19",
+    "voice": "male:Pratama",
+    "slot": "19:00",
+    "hook": "question",
+    "note": "video #1 (already made)",
+    "format": "standard"
+   },
+   {
+    "date": "2026-10-20",
+    "voice": "female:Cahaya",
+    "slot": "12:30",
+    "hook": "shock_number",
+    "format": "standard"
+   },
+   {
+    "date": "2026-10-21",
+    "voice": "male:Pratama",
+    "slot": "12:30",
+    "hook": "shock_number",
+    "format": "standard"
+   },
+   {
+    "date": "2026-10-22",
+    "voice": "female:Cahaya",
+    "slot": "19:00",
+    "hook": "question",
+    "format": "standard"
+   },
+   {
+    "date": "2026-10-23",
+    "voice": "male:Pratama",
+    "slot": "19:00",
+    "hook": "question_reveal",
+    "hook_b": "shock_number",
+    "subs": "word",
+    "format": "standard"
+   },
+   {
+    "date": "2026-10-24",
+    "voice": "male:Pratama",
+    "slot": "19:00",
+    "hook": "kamu_stakes",
+    "hook_b": "myth",
+    "subs": "block",
+    "format": "chapter_cut"
+   },
+   {
+    "date": "2026-10-25",
+    "voice": "male:Pratama",
+    "slot": "19:00",
+    "hook": "question_reveal",
+    "hook_b": "person_collage",
+    "subs": "word",
+    "format": "minggu_depan"
+   },
+   {
+    "date": "2026-10-26",
+    "voice": "male:Pratama",
+    "slot": "19:00",
+    "hook": "shock_number",
+    "hook_b": "kamu_stakes",
+    "subs": "block",
+    "format": "short"
+   },
+   {
+    "date": "2026-10-27",
+    "voice": "male:Pratama",
+    "slot": "19:00",
+    "hook": "question_reveal",
+    "hook_b": "myth",
+    "subs": "word",
+    "format": "standard"
+   },
+   {
+    "date": "2026-10-28",
+    "voice": "male:Pratama",
+    "slot": "19:00",
+    "hook": "shock_number",
+    "hook_b": "person_collage",
+    "subs": "block",
+    "format": "short"
+   },
+   {
+    "date": "2026-10-29",
+    "voice": "male:Pratama",
+    "slot": "19:00",
+    "hook": "question_reveal",
+    "hook_b": "kamu_stakes",
+    "subs": "word",
+    "format": "standard"
+   },
+   {
+    "date": "2026-10-30",
+    "voice": "female:Cahaya",
+    "slot": "19:00",
+    "hook": "shock_number",
+    "hook_b": "myth",
+    "subs": "block",
+    "format": "short"
+   },
+   {
+    "date": "2026-10-31",
+    "voice": "female:Cahaya",
+    "slot": "19:00",
+    "hook": "question_reveal",
+    "hook_b": "story",
+    "subs": "word",
+    "format": "chapter_cut"
+   },
+   {
+    "date": "2026-11-01",
+    "voice": "female:Cahaya",
+    "slot": "19:00",
+    "hook": "kamu_stakes",
+    "hook_b": "person_collage",
+    "subs": "block",
+    "format": "minggu_depan"
+   },
+   {
+    "date": "2026-11-02",
+    "voice": "female:Cahaya",
+    "slot": "19:00",
+    "hook": "shock_number",
+    "hook_b": "story",
+    "subs": "word",
+    "format": "standard"
+   },
+   {
+    "date": "2026-11-03",
+    "voice": "female:Cahaya",
+    "slot": "19:00",
+    "hook": "myth",
+    "hook_b": "person_collage",
+    "subs": "block",
+    "format": "short"
+   },
+   {
+    "date": "2026-11-04",
+    "voice": "female:Cahaya",
+    "slot": "19:00",
+    "hook": "kamu_stakes",
+    "hook_b": "story",
+    "subs": "word",
+    "format": "standard"
+   },
+   {
+    "date": "2026-11-05",
+    "voice": "female:Cahaya",
+    "slot": "19:00",
+    "hook": "myth",
+    "hook_b": "story",
+    "subs": "block",
+    "format": "short"
+   },
+   {
+    "date": "2026-11-06",
+    "voice": "male:Pratama",
+    "slot": "19:00",
+    "hook": "person_collage",
+    "hook_b": "story",
+    "subs": "word",
+    "format": "standard"
+   },
+   {
+    "date": "2026-11-07",
+    "voice": "male:Pratama",
+    "slot": "19:00",
+    "hook": "shock_number",
+    "hook_b": "question_reveal",
+    "subs": "block",
+    "format": "chapter_cut"
+   },
+   {
+    "date": "2026-11-08",
+    "voice": "male:Pratama",
+    "slot": "19:00",
+    "hook": "myth",
+    "hook_b": "kamu_stakes",
+    "subs": "word",
+    "format": "minggu_depan"
+   },
+   {
+    "date": "2026-11-09",
+    "voice": "male:Pratama",
+    "slot": "19:00",
+    "hook": "person_collage",
+    "hook_b": "question_reveal",
+    "subs": "block",
+    "format": "short"
+   },
+   {
+    "date": "2026-11-10",
+    "voice": "male:Pratama",
+    "slot": "19:00",
+    "hook": "kamu_stakes",
+    "hook_b": "shock_number",
+    "subs": "word",
+    "format": "standard"
+   },
+   {
+    "date": "2026-11-11",
+    "voice": "male:Pratama",
+    "slot": "19:00",
+    "hook": "myth",
+    "hook_b": "question_reveal",
+    "subs": "block",
+    "format": "short"
+   },
+   {
+    "date": "2026-11-12",
+    "voice": "male:Pratama",
+    "slot": "19:00",
+    "hook": "person_collage",
+    "hook_b": "shock_number",
+    "subs": "word",
+    "format": "standard"
+   },
+   {
+    "date": "2026-11-13",
+    "voice": "female:Cahaya",
+    "slot": "19:00",
+    "hook": "kamu_stakes",
+    "hook_b": "question_reveal",
+    "subs": "block",
+    "format": "short"
+   },
+   {
+    "date": "2026-11-14",
+    "voice": "female:Cahaya",
+    "slot": "19:00",
+    "hook": "myth",
+    "hook_b": "shock_number",
+    "subs": "word",
+    "format": "chapter_cut"
+   },
+   {
+    "date": "2026-11-15",
+    "voice": "female:Cahaya",
+    "slot": "19:00",
+    "hook": "story",
+    "hook_b": "question_reveal",
+    "subs": "block",
+    "format": "minggu_depan"
+   },
+   {
+    "date": "2026-11-16",
+    "voice": "female:Cahaya",
+    "slot": "19:00",
+    "hook": "person_collage",
+    "hook_b": "kamu_stakes",
+    "subs": "word",
+    "format": "standard"
+   },
+   {
+    "date": "2026-11-17",
+    "voice": "female:Cahaya",
+    "slot": "19:00",
+    "hook": "story",
+    "hook_b": "shock_number",
+    "subs": "block",
+    "format": "short"
+   },
+   {
+    "date": "2026-11-18",
+    "voice": "female:Cahaya",
+    "slot": "19:00",
+    "hook": "person_collage",
+    "hook_b": "myth",
+    "subs": "word",
+    "format": "standard"
+   },
+   {
+    "date": "2026-11-19",
+    "voice": "female:Cahaya",
+    "slot": "19:00",
+    "hook": "story",
+    "hook_b": "kamu_stakes",
+    "subs": "block",
+    "format": "short"
+   },
+   {
+    "date": "2026-11-20",
+    "voice": "male:Pratama",
+    "slot": "19:00",
+    "hook": "story",
+    "hook_b": "myth",
+    "subs": "word",
+    "format": "standard"
+   },
+   {
+    "date": "2026-11-21",
+    "voice": "male:Pratama",
+    "slot": "19:00",
+    "hook": "story",
+    "hook_b": "person_collage",
+    "subs": "block",
+    "format": "chapter_cut"
+   }
+  ],
+  "repeat": "rows are explicit through 2026-11-21 (each hook pair twice, sides swapped). After that the Sunday review sets the next block.",
+  "trial_reels": "daily: A = main post (IG+YouTube+TikTok); B = same video, only the opening differs (hook_b style), posted to Instagram only as a Trial Reel (engine/variant.py + post.py --trial). Compare A vs B on IG 3-s hold and avg % watched.",
+  "primary_metric": "avg_percent_watched",
+  "review": "weekly, Sunday",
+  "format_rules": {
+   "standard": "current sticker explainer, 60-90 s",
+   "short": "30-45 s, ~80-110 spoken words: hook, tagline, 2-3 beats, CTA; one zone per 5-8 s",
+   "chapter_cut": "Saturday: a Short cut from the weekly video (not part of the format test)",
+   "minggu_depan": "Sunday: week-ahead Short (not part of the format test)"
+  },
+  "hook_styles": {
+   "question_reveal": "question whose answer is a number held back to the end (Semenit Ilmu style), big 2-line title card",
+   "shock_number": "the most surprising verified number + why it matters, in one line",
+   "kamu_stakes": "direct 'kamu' stakes: what it changes for the viewer ('Cicilan kamu naik?')",
+   "myth": "'Katanya X. Ternyata Y.' — a common belief, then the twist",
+   "person_collage": "real-person cut-out in the collage look (tests/hook-collage); needs a licensed face, else use the next style and log it",
+   "story": "cold open on a person in a scene, mid-action, no context first ('Jumat pagi, layar Pak Budi merah semua…'); the news arrives through what happens to them"
+  }
+ },
+ "topic_rotation_note": "Soft tiebreaker only: a clearly higher-scoring idea always beats the day's topic.",
+ "rubric_weights": {
+  "spreading": 1.0,
+  "wallet": 1.0,
+  "surprise": 1.0,
+  "visual": 1.0,
+  "fresh": 1.0,
+  "rivals": 1.0
+ },
+ "rubric_weights_log": [
+  "2026-10-22: all 1.0 (start); the analyst adjusts weekly once ≥8 videos have 72 h metrics"
+ ]
+}

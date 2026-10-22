@@ -1,0 +1,316 @@
+{
+ "duration": 23.058,
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Kenapa harga kopi susu makin mahal?",
+   "start": 0.3,
+   "end": 2.378,
+   "words": [
+    {
+     "w": "Kenapa",
+     "start": 0.3,
+     "end": 0.763
+    },
+    {
+     "w": "harga",
+     "start": 0.763,
+     "end": 1.086
+    },
+    {
+     "w": "kopi",
+     "start": 1.086,
+     "end": 1.409
+    },
+    {
+     "w": "susu",
+     "start": 1.409,
+     "end": 1.732
+    },
+    {
+     "w": "makin",
+     "start": 1.732,
+     "end": 2.055
+    },
+    {
+     "w": "mahal?",
+     "start": 2.055,
+     "end": 2.378
+    }
+   ]
+  },
+  {
+   "id": "rd",
+   "text": "Rangkumin dong!",
+   "start": 2.678,
+   "end": 3.568,
+   "words": [
+    {
+     "w": "Rangkumin",
+     "start": 2.678,
+     "end": 3.317
+    },
+    {
+     "w": "dong!",
+     "start": 3.317,
+     "end": 3.568
+    }
+   ]
+  },
+  {
+   "id": "parts",
+   "text": "Satu gelas isinya biji kopi, susu, gula, dan sewa tempat.",
+   "start": 3.918,
+   "end": 7.501,
+   "words": [
+    {
+     "w": "Satu",
+     "start": 3.918,
+     "end": 4.276
+    },
+    {
+     "w": "gelas",
+     "start": 4.276,
+     "end": 4.635
+    },
+    {
+     "w": "isinya",
+     "start": 4.635,
+     "end": 5.149
+    },
+    {
+     "w": "biji",
+     "start": 5.149,
+     "end": 5.507
+    },
+    {
+     "w": "kopi,",
+     "start": 5.507,
+     "end": 5.866
+    },
+    {
+     "w": "susu,",
+     "start": 5.866,
+     "end": 6.224
+    },
+    {
+     "w": "gula,",
+     "start": 6.224,
+     "end": 6.582
+    },
+    {
+     "w": "dan",
+     "start": 6.582,
+     "end": 6.785
+    },
+    {
+     "w": "sewa",
+     "start": 6.785,
+     "end": 7.143
+    },
+    {
+     "w": "tempat.",
+     "start": 7.143,
+     "end": 7.501
+    }
+   ]
+  },
+  {
+   "id": "price",
+   "text": "Dalam tiga tahun, harganya naik dari Rp18 ribu jadi Rp32 ribu.",
+   "start": 7.801,
+   "end": 13.069,
+   "words": [
+    {
+     "w": "Dalam",
+     "start": 7.801,
+     "end": 8.321
+    },
+    {
+     "w": "tiga",
+     "start": 8.321,
+     "end": 8.841
+    },
+    {
+     "w": "tahun,",
+     "start": 8.841,
+     "end": 9.361
+    },
+    {
+     "w": "harganya",
+     "start": 9.361,
+     "end": 10.107
+    },
+    {
+     "w": "naik",
+     "start": 10.107,
+     "end": 10.401
+    },
+    {
+     "w": "dari",
+     "start": 10.401,
+     "end": 10.921
+    },
+    {
+     "w": "Rp18",
+     "start": 10.921,
+     "end": 11.215
+    },
+    {
+     "w": "ribu",
+     "start": 11.215,
+     "end": 11.735
+    },
+    {
+     "w": "jadi",
+     "start": 11.735,
+     "end": 12.255
+    },
+    {
+     "w": "Rp32",
+     "start": 12.255,
+     "end": 12.549
+    },
+    {
+     "w": "ribu.",
+     "start": 12.549,
+     "end": 13.069
+    }
+   ]
+  },
+  {
+   "id": "route",
+   "text": "Ongkos kirim dan sewa tempat juga ikut naik.",
+   "start": 13.369,
+   "end": 15.895,
+   "words": [
+    {
+     "w": "Ongkos",
+     "start": 13.369,
+     "end": 13.723
+    },
+    {
+     "w": "kirim",
+     "start": 13.723,
+     "end": 14.078
+    },
+    {
+     "w": "dan",
+     "start": 14.078,
+     "end": 14.278
+    },
+    {
+     "w": "sewa",
+     "start": 14.278,
+     "end": 14.632
+    },
+    {
+     "w": "tempat",
+     "start": 14.632,
+     "end": 14.986
+    },
+    {
+     "w": "juga",
+     "start": 14.986,
+     "end": 15.34
+    },
+    {
+     "w": "ikut",
+     "start": 15.34,
+     "end": 15.695
+    },
+    {
+     "w": "naik.",
+     "start": 15.695,
+     "end": 15.895
+    }
+   ]
+  },
+  {
+   "id": "cta",
+   "text": "Tim kopi sachet atau tim kopi kekinian? Komen!",
+   "start": 16.245,
+   "end": 19.217,
+   "words": [
+    {
+     "w": "Tim",
+     "start": 16.245,
+     "end": 16.467
+    },
+    {
+     "w": "kopi",
+     "start": 16.467,
+     "end": 16.86
+    },
+    {
+     "w": "sachet",
+     "start": 16.86,
+     "end": 17.253
+    },
+    {
+     "w": "atau",
+     "start": 17.253,
+     "end": 17.645
+    },
+    {
+     "w": "tim",
+     "start": 17.645,
+     "end": 17.867
+    },
+    {
+     "w": "kopi",
+     "start": 17.867,
+     "end": 18.26
+    },
+    {
+     "w": "kekinian?",
+     "start": 18.26,
+     "end": 18.824
+    },
+    {
+     "w": "Komen!",
+     "start": 18.824,
+     "end": 19.217
+    }
+   ]
+  },
+  {
+   "id": "end",
+   "text": "Follow Rangkumin Dong, biar nggak ketinggalan.",
+   "start": 19.517,
+   "end": 21.908,
+   "words": [
+    {
+     "w": "Follow",
+     "start": 19.517,
+     "end": 19.915
+    },
+    {
+     "w": "Rangkumin",
+     "start": 19.915,
+     "end": 20.487
+    },
+    {
+     "w": "Dong,",
+     "start": 20.487,
+     "end": 20.712
+    },
+    {
+     "w": "biar",
+     "start": 20.712,
+     "end": 20.938
+    },
+    {
+     "w": "nggak",
+     "start": 20.938,
+     "end": 21.163
+    },
+    {
+     "w": "ketinggalan.",
+     "start": 21.163,
+     "end": 21.908
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+{
+  "lines": [
+    {"id": "hook",  "text": "Kenapa harga kopi susu makin mahal?", "pause": 0.3},
+    {"id": "rd",    "text": "Rangkumin dong!", "pause": 0.35},
+    {"id": "parts", "text": "Satu gelas isinya biji kopi, susu, gula, dan sewa tempat.", "pause": 0.3},
+    {"id": "price", "text": "Dalam tiga tahun, harganya naik dari Rp18 ribu jadi Rp32 ribu.",
+                    "say": "Dalam tiga tahun, harganya naik dari delapan belas ribu, jadi tiga puluh dua ribu rupiah.", "pause": 0.3},
+    {"id": "route", "text": "Ongkos kirim dan sewa tempat juga ikut naik.", "pause": 0.35},
+    {"id": "cta",   "text": "Tim kopi sachet atau tim kopi kekinian? Komen!", "pause": 0.3},
+    {"id": "end",   "text": "Follow Rangkumin Dong, biar nggak ketinggalan."}
+  ],
+  "tail": 0.9
+}

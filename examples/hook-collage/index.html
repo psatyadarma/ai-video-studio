@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Hook test: collage cut-out</title>
+<link rel="stylesheet" href="../../styles/sticker/sticker.css">
+<script src="../../styles/sticker/sticker.js"></script>
+<script src="build/timing.js"></script>
+<style>
+  /* Collage / cut-out look (after mg-styles-15 #06, MIT). Brand UI (logo, subtitles, progress) stays sticker-standard. */
+  :root { --kraft: #E4D7BC; --news: #F1ECE0; --red: #D6301F; --blk: #17130E; }
+  #stage { background: var(--kraft); }
+  /* newspaper columns printed faintly on the kraft ground */
+  .cols { position: absolute; background: repeating-linear-gradient(180deg, rgba(23,19,14,.13) 0 5px, transparent 5px 15px); }
+  .scrap { position: absolute; background: var(--news); box-shadow: 0 10px 18px rgba(23,19,14,.22); }
+  #redblock { position: absolute; left: -160px; top: 300px; width: 1400px; height: 560px; background: var(--red);
+              transform: rotate(-9deg); box-shadow: 0 16px 26px rgba(23,19,14,.25); }
+  #redblock::after { content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle, rgba(23,19,14,.18) 2.2px, transparent 2.8px) 0 0 / 11px 11px; }
+  #blkline { position: absolute; left: -100px; top: 905px; width: 1300px; height: 26px; background: var(--blk); transform: rotate(-9deg); }
+  #person { position: absolute; left: 540px; top: 0; width: 1000px; transform-origin: 50% 100%; filter: url(#cut); }
+  #person img { width: 100%; display: block; filter: grayscale(1) contrast(1.35) brightness(1.06); }
+  #person .ht { position: absolute; inset: 0; mix-blend-mode: multiply;
+    -webkit-mask: url(../assets/people/muhammad-lutfi.png) 0 0 / 100% 100%;
+    background: radial-gradient(circle, rgba(23,19,14,.42) 1.9px, transparent 2.5px) 0 0 / 8px 8px,
+                linear-gradient(rgba(214,160,90,.18), rgba(214,160,90,.18)); }
+  .puff { position: absolute; background: #9DA1A3; }
+  .puff::after { content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle, rgba(23,19,14,.30) 2.4px, transparent 3px) 0 0 / 10px 10px; }
+  .rn { position: absolute; left: 56px; display: flex; gap: 4px; align-items: flex-end; }
+  .rn i { font-style: normal; display: inline-block; text-align: center; line-height: 1; padding: 6px 8px 8px;
+          box-shadow: 0 6px 10px rgba(23,19,14,.28); }
+  .strip { position: absolute; padding: 14px 34px 20px; font-weight: 900; text-transform: uppercase; white-space: nowrap;
+           box-shadow: 0 10px 16px rgba(23,19,14,.28); }
+  .tape { position: absolute; width: 120px; height: 38px; background: rgba(238,226,170,.78);
+          box-shadow: 0 2px 4px rgba(23,19,14,.15); }
+  .label { position: absolute; background: #fff; padding: 14px 24px 16px; font-family: "Courier 10 Pitch", Courier, monospace;
+           font-weight: 700; font-size: 40px; color: var(--blk); white-space: nowrap; box-shadow: 0 10px 16px rgba(23,19,14,.25); }
+  .label small { display: block; font-size: 27px; font-weight: 400; margin-top: 4px; }
+  .flag { position: absolute; width: 170px; height: 114px; box-shadow: 0 10px 16px rgba(23,19,14,.28); }
+  .flag .r { height: 50%; background: #EF3340; } .flag .w { height: 50%; background: #fff; }
+  #ledge { position: absolute; left: -40px; top: 1236px; width: 1160px; height: 760px; background: var(--news);
+           box-shadow: 0 -10px 22px rgba(23,19,14,.22); }
+  #ledge::before { content: ""; position: absolute; left: 70px; right: 70px; top: 300px; bottom: 0;
+    background: repeating-linear-gradient(180deg, rgba(23,19,14,.10) 0 4px, transparent 4px 13px); }
+  .credit { position: absolute; right: 190px; top: 1262px; font-weight: 700; font-size: 22px; color: #5b5144; z-index: 6; }
+  #stampW { position: absolute; left: 540px; top: 860px; }
+  #stamp { background: var(--red); color: #fff; font-weight: 900; font-size: 110px; letter-spacing: -3px; padding: 30px 60px 40px;
+           white-space: nowrap; box-shadow: 0 18px 26px rgba(23,19,14,.3); }
+  #grain { position: absolute; inset: 0; z-index: 8; pointer-events: none; opacity: .28; mix-blend-mode: multiply; }
+  #subs { z-index: 6; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <filter id="cut" x="-5%" y="-5%" width="110%" height="110%">
+    <feMorphology in="SourceAlpha" operator="dilate" radius="9" result="d"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="n"/>
+    <feDisplacementMap in="d" in2="n" scale="10" result="dd"/>
+    <feFlood flood-color="#FBF8F1"/><feComposite in2="dd" operator="in" result="edge"/>
+    <feGaussianBlur in="dd" stdDeviation="9" result="b"/><feOffset in="b" dy="14" result="bo"/>
+    <feFlood flood-color="#17130E" flood-opacity=".35"/><feComposite in2="bo" operator="in" result="sh"/>
+    <feMerge><feMergeNode in="sh"/><feMergeNode in="edge"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="paper"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="7"/>
+    <feColorMatrix values="0 0 0 0 .45  0 0 0 0 .38  0 0 0 0 .3  0 0 0 1.1 -.35"/></filter>
+</svg>
+<div id="stage">
+  <div class="cols" style="left:40px; top:200px; width:300px; height:1040px; transform:rotate(-2deg)"></div>
+  <div class="cols" style="left:380px; top:160px; width:300px; height:1080px; transform:rotate(1deg)"></div>
+  <div class="cols" style="left:720px; top:210px; width:330px; height:1040px; transform:rotate(-1deg)"></div>
+  <div id="world">
+    <div id="redblock"></div>
+    <div id="blkline"></div>
+    <div id="smoke" class="abs" style="left:220px; top:470px; width:10px; height:10px;"></div>
+    <div id="person" class="abs"><img src="../assets/people/muhammad-lutfi.png" alt=""><div class="ht"></div></div>
+    <div id="sg" class="abs" style="left:880px; top:330px; width:170px; height:170px;">
+      <div class="flag" style="left:0; top:0;"><div class="r"></div><div class="w"></div>
+        <svg style="position:absolute;left:0;top:0" width="170" height="57" viewBox="0 0 150 50"><circle cx="30" cy="25" r="16" fill="#fff"/><circle cx="37" cy="25" r="15" fill="#EF3340"/>
+        <g fill="#fff"><circle cx="50" cy="16" r="3"/><circle cx="60" cy="22" r="3"/><circle cx="57" cy="33" r="3"/><circle cx="44" cy="33" r="3"/><circle cx="41" cy="22" r="3"/></g></svg></div>
+      <div class="tape" style="left:-30px; top:-14px; transform:rotate(-24deg)"></div>
+      <div class="strip" id="sgl" style="left:-30px; top:128px; background:var(--blk); color:#fff; font-size:40px; padding:8px 18px 12px;">Singapura</div>
+    </div>
+    <svg id="arrow" class="abs" style="left:780px; top:520px;" width="260" height="220" viewBox="0 0 260 220">
+      <path id="arrowPath" d="M18 196 C 60 170, 70 120, 120 120 C 170 120, 150 60, 205 38" fill="none" stroke="#D6301F" stroke-width="13" stroke-linecap="round" stroke-dasharray="380" stroke-dashoffset="380"/>
+      <path id="arrowHead" d="M176 34 L210 34 L200 68" fill="none" stroke="#D6301F" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" opacity="0"/>
+    </svg>
+    <div id="ledge"></div>
+    <div id="nameW" class="abs" style="left:250px; top:700px;">
+      <div class="label" id="name" style="position:relative">MUHAMMAD LUTFI<small>eks Menteri Perdagangan</small></div>
+      <div class="tape" style="left:-36px; top:-16px; transform:rotate(-30deg)"></div>
+      <div class="tape" style="right:-40px; bottom:-12px; transform:rotate(-26deg); width:100px"></div>
+    </div>
+    <div id="stampW" class="abs"><div id="stamp">Rangkumin dong!</div></div>
+  </div>
+
+  <div id="b1" class="rn" style="top:836px;"></div>
+  <div id="b2" class="strip" style="left:76px; top:970px; background:#FFD23F; color:var(--blk); font-size:82px; font-family:'GFS Baskerville','DejaVu Serif',serif;">Salah siapa?</div>
+  <div id="b3" class="strip" style="left:300px; top:1096px; background:#fff; color:var(--red); font-size:72px; letter-spacing:-1px;">Kok bisa?</div>
+  <div class="credit" id="credit">Foto: Kemendag RI (domain publik), via Wikimedia Commons</div>
+  <div id="brand"><div class="dot"></div><b>Rangkumin Dong</b></div>
+  <div id="subs"></div>
+  <div id="progress"></div>
+  <svg id="grain" width="1080" height="1920"><rect width="1080" height="1920" filter="url(#paper)"/></svg>
+</div>
+<script>
+const $ = (id) => document.getElementById(id);
+const T = window.TIMING; window.DURATION = T.duration;
+const at = K.at, W = K.word;
+
+// seeded randomness: every frame is a pure function of t
+const hash = (s) => { let h = 2166136261; for (const c of String(s)) h = Math.imul(h ^ c.charCodeAt(0), 16777619); return h >>> 0; };
+const rnd = (s) => { let x = hash(s); x ^= x << 13; x ^= x >>> 17; x ^= x << 5; return ((x >>> 0) % 10000) / 10000; };
+const ST = (t) => Math.floor(t * 12 + 1e-6) / 12;                 // stop-motion clock: 12 fps
+const jit = (id, t, a = 2) => { const k = Math.floor(t * 12); return [(rnd(id + 'x' + k) - .5) * 2 * a, (rnd(id + 'y' + k) - .5) * 2 * a, (rnd(id + 'r' + k) - .5) * 1.2]; };
+
+// torn-paper outline: jagged polygon on chosen sides
+function torn(el, seed, amp = 9, step = 26, sides = 'trbl') {
+  const w = el.offsetWidth, h = el.offsetHeight, P = [];
+  const j = (i) => (rnd(seed + i) * amp);
+  let i = 0;
+  for (let x = 0; x <= w; x += step) P.push([x, sides.includes('t') ? j(i++) : 0]);
+  for (let y = 0; y <= h; y += step) P.push([w - (sides.includes('r') ? j(i++) : 0), y]);
+  for (let x = w; x >= 0; x -= step) P.push([x, h - (sides.includes('b') ? j(i++) : 0)]);
+  for (let y = h; y >= 0; y -= step) P.push([sides.includes('l') ? j(i++) : 0, y]);
+  el.style.clipPath = 'polygon(' + P.map(([x, y]) => `${x.toFixed(1)}px ${y.toFixed(1)}px`).join(',') + ')';
+}
+
+// ransom-note headline: each letter cut from a different print
+const LOOKS = [
+  { bg: '#17130E', c: '#fff', f: 'Inter', w: 900 }, { bg: '#F1ECE0', c: '#17130E', f: "'GFS Baskerville', serif", w: 700 },
+  { bg: '#D6301F', c: '#fff', f: 'Inter', w: 900 }, { bg: '#fff', c: '#17130E', f: "'DejaVu Serif', serif", w: 700 },
+  { bg: '#FFD23F', c: '#17130E', f: "'Bitstream Charter', serif", w: 700 }, { bg: '#F1ECE0', c: '#D6301F', f: 'Inter', w: 900 },
+];
+const b1 = $('b1'), letters = [];
+[...'ASAP KARHUTLA'].forEach((ch, i) => {
+  if (ch === ' ') { const s = document.createElement('span'); s.style.width = '18px'; b1.appendChild(s); return; }
+  const L = LOOKS[Math.floor(rnd('lk' + i) * LOOKS.length)];
+  const e = document.createElement('i'); e.textContent = ch;
+  Object.assign(e.style, { background: L.bg, color: L.c, fontFamily: L.f, fontWeight: L.w, fontSize: (58 + rnd('fs' + i) * 14) + 'px' });
+  b1.appendChild(e); letters.push({ e, rot: (rnd('ro' + i) - .5) * 14, dy: (rnd('dy' + i) - .5) * 16, i: letters.length });
+});
+letters.forEach(({ e, i }) => torn(e, 'l' + i, 5, 12));
+['b2', 'b3', 'sgl', 'name', 'stamp'].forEach((id) => torn($(id), id, 8, 22));
+torn($('ledge'), 'ledge', 22, 30, 't');
+document.querySelectorAll('.tape').forEach((e, i) => torn(e, 'tp' + i, 6, 12, 'lr'));
+
+function tornBlob(el, seed) {
+  const w = el.offsetWidth, h = el.offsetHeight, P = [];
+  for (let i = 0; i < 40; i++) { const a = i / 40 * Math.PI * 2, r = 0.86 + rnd(seed + i) * 0.14 - (i % 7 === 0 ? .12 : 0);
+    P.push([w / 2 + Math.cos(a) * w / 2 * r, h / 2 + Math.sin(a) * h / 2 * r]); }
+  el.style.clipPath = 'polygon(' + P.map(([x, y]) => `${x.toFixed(1)}px ${y.toFixed(1)}px`).join(',') + ')';
+}
+// smoke: torn grey halftone scraps
+const puffs = [[-300, -40, 270], [-160, 50, 300], [-30, -90, 240], [-380, 120, 220], [80, 10, 220], [-230, -170, 210], [-60, 140, 200]];
+const sm = $('smoke');
+const pe = puffs.map(([x, y, r], i) => { const d = document.createElement('div'); d.className = 'puff';
+  Object.assign(d.style, { left: x - r / 2 + 'px', top: y - r / 2 + 'px', width: r + 'px', height: r * .8 + 'px', background: i % 2 ? '#A7AAAA' : '#8E9294' });
+  sm.appendChild(d); tornBlob(d, 'pf' + i); return d; });
+
+// "slap": element drops onto the page in 2-3 stop-motion steps, then sits with hand-placement jitter
+function slap(el, id, tIn, tOut, t, rot = 0, from = 1.35, centre = true) {
+  const q = ST(t), k = Math.floor((q - tIn) * 12 + 1e-6);
+  if (t < tIn || t >= tOut + 0.17) { el.style.opacity = 0; return; }
+  el.style.opacity = 1;
+  const s = k <= 0 ? from : k === 1 ? 0.94 : 1;
+  const [jx, jy, jr] = jit(id, t, k < 3 ? 3 : 1.4);
+  const out = t >= tOut ? Math.min(1, Math.floor((t - tOut) * 12 + 1) / 2) : 0;
+  el.style.transform = (centre ? 'translate(-50%,-50%) ' : '') + `translate(${jx + out * -1200}px, ${jy}px) rotate(${rot + jr + out * -12}deg) scale(${s})`;
+}
+function slapAbs(el, id, tIn, tOut, t, rot = 0) {   // same, for screen-space elements without the centring translate
+  slap(el, id, tIn, tOut, t, rot, 1.35, false); el.style.transformOrigin = '0 50%';
+}
+
+function seek(t) {
+  const q = ST(t);
+  K.camera($('world'), [{ t: 0, x: 540, y: 960, z: 1 }], t);
+  const rd = at('rd', -0.05);
+
+  // person: on from frame 0 (cover), pushed up in stop-motion steps, little hand-jitter while he's mentioned
+  const ps = K.clamp(K.spring(q + 0.45, 140, 15));
+  const [jx, jy, jr] = jit('p', t, t > W('h2', 'lutfi') && t < rd ? 2.5 : 1);
+  const p = $('person');
+  const gone = t >= rd ? Math.min(1, Math.floor((t - rd) * 12 + 1) / 3) : 0;
+  p.style.opacity = gone >= 1 ? 0 : 1;
+  p.style.transform = `translate(-50%, ${1420 - 1180 * ps + jy + gone * 1500}px) translateX(${jx}px) rotate(${jr * .6 - 1}deg)`;
+
+  // red block & black rule slide in on 12 fps
+  const rb = K.clamp(K.spring(q + 0.3, 200, 18));
+  $('redblock').style.transform = `rotate(-9deg) translateX(${(1 - rb) * -1300}px)`;
+  $('blkline').style.transform = `rotate(-9deg) translateX(${(1 - rb) * 1300}px)`;
+
+  // smoke scraps slide in on "asap", each scrap a beat apart
+  pe.forEach((d, i) => {
+    const s = K.clamp((q - (W('h1', 'asap') - 0.15 + i * 0.06)) / 0.35);
+    const [x, y, r] = jit('pf' + i, t, 2);
+    d.style.opacity = s > 0 ? 1 : 0;
+    d.style.transform = `translate(${(1 - K.easeOut(s)) * -500 + x}px, ${y}px) rotate(${r * 3 + i * 7}deg)`;
+  });
+  sm.style.opacity = t >= rd ? 0 : 1;
+
+  // headline: ransom letters slapped on one per frame-step from frame 0 so the cover carries it
+  letters.forEach(({ e, rot, dy, i }) => {
+    const tIn = -0.6 + i * (1 / 24);
+    const k = Math.floor((q - tIn) * 12);
+    const [x, y, r] = jit('L' + i, t, 1.2);
+    e.style.opacity = t >= rd + 0.17 ? 0 : 1;
+    e.style.transform = `translate(${x}px, ${dy + y}px) rotate(${rot + r}deg) scale(${k <= 0 ? 1.4 : 1})`;
+  });
+  slapAbs($('b2'), 'b2', W('h2', 'pelaku') - 0.05, rd, t, -3);
+  slapAbs($('b3'), 'b3', W('h2', 'kok') - 0.05, rd, t, 2.5);
+
+  // name label + Singapore flag + marker arrow
+  slap($('nameW'), 'nm', W('h2', 'lutfi') - 0.05, rd, t, -4);
+  slap($('sg'), 'sg', W('h2', 'singapura') - 0.05, rd, t, 5);
+  const ap = Math.floor(K.prog(q, W('h2', 'singapura') + 0.05, 0.42) * 5) / 5;   // drawn in 5 strokes
+  $('arrowPath').setAttribute('stroke-dashoffset', 380 * (1 - ap));
+  $('arrowHead').setAttribute('opacity', ap >= 1 && t < rd ? 1 : 0);
+  $('arrow').style.opacity = t < rd ? 1 : 0;
+  $('credit').style.opacity = t < rd ? 0.9 : 0;
+
+  slap($('stampW'), 'st', rd, Infinity, t, -6, 1.6);
+  K.subtitles($('subs'), t);
+  $('progress').style.width = (t / T.duration * 100) + '%';
+}
+window.seek = seek;
+</script>
+</body>
+</html>

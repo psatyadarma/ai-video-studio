@@ -1,0 +1,8 @@
+node_modules/
+out/
+models/
+__pycache__/
+.env
+*.env
+build/voice.wav
+build/stt.json

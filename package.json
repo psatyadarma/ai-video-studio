@@ -1,0 +1,11 @@
+{
+  "name": "ai-video-studio",
+  "private": false,
+  "type": "module",
+  "dependencies": {
+    "@sparticuz/chromium": "*",
+    "d3-geo": "^3.1.1",
+    "playwright-core": "*",
+    "topojson-client": "^3.1.0"
+  }
+}
